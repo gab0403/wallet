@@ -1,4 +1,4 @@
 // Coloque aqui suas actions
-export const newActionUser = (state) => ({ type: 'addUser', state });
+export const newActionUser = (payload) => ({ type: 'addUser', payload });
 
-export const newActionWallet = (state) => ({ type: 'addWallet', state });
+export const newActionWallet = (payload) => ({ type: 'addWallet', payload });
