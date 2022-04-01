@@ -24,9 +24,7 @@ class Login extends React.Component {
 
   validateEmailAndPassword() {
     const { email, password } = this.state;
-    const emailValidate = new RegExp(
-      '^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]$',
-    );
+    const emailValidate = /^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]$/;
     const mailValidator = emailValidate.test(email);
     const minLengthValue = 6;
     const passwordValidate = password.length >= minLengthValue;
