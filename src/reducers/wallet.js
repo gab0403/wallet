@@ -3,13 +3,21 @@ const INITIAL_STATE = {
   wallet: {
     currencies: [],
     expenses: [],
+    isFetching: false,
+    error: '',
   },
 };
 
 function walletReducer(state = INITIAL_STATE, action) {
   switch (action.type) {
+  case 'GET_COINS':
+    return { ...state, isFetching: true };
+  case 'REQUEST_COINS':
+    return { ...state, currencies: action.payload, isFetching: false };
+  case 'FAILED_REQUEST':
+    return { ...state, error: action.payload, isFetching: false };
   case 'addWallet':
-    return { wallet: action.state };
+    return { wallet: action.payload };
   default:
     return state;
   }

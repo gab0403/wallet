@@ -11,7 +11,7 @@ class Header extends React.Component {
           { email }
         </h2>
         <h2 data-testid="total-field">
-          Total: 0
+          Total de despesa: R$
         </h2>
         <h2 data-testid="header-currency-field">
           BRL
