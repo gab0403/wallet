@@ -9,7 +9,6 @@ class Wallet extends React.Component {
   componentDidMount() {
     const { getCoins } = this.props;
     getCoins();
-    console.log(getCoins());
   }
 
   render() {

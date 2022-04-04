@@ -15,8 +15,14 @@ function walletReducer(state = INITIAL_STATE, action) {
     return { ...state, currencies: action.payload, isFetching: false };
   case 'FAILED_REQUEST':
     return { ...state, error: action.payload, isFetching: false };
+  case 'GET_EXPENSE':
+    return { ...state, isFetching: true };
+  case 'REQUEST_EXPENSES':
+    return { ...state, expenses: [...state.expenses, action.payload] };
+  case 'FAIL_REQUEST':
+    return { ...state, error: action.payload, isFetching: false };
   case 'addWallet':
-    return { wallet: action.payload };
+    return { expenses: action.payload };
   default:
     return state;
   }

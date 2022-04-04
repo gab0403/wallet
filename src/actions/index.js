@@ -29,3 +29,30 @@ export function fetchCoins() {
     }
   };
 }
+
+// Fecth despesas
+const GET_EXPENSE = 'GET_EXPENSE';
+const REQUEST_EXPENSES = 'REQUEST_EXPENSES';
+const FAIL_REQUEST = 'FAIL_REQUEST';
+
+const getExpense = () => ({ type: GET_EXPENSE });
+
+const requestExpense = (payload) => ({
+  type: REQUEST_EXPENSES, payload });
+
+const failRequest = (error) => ({
+  type: FAIL_REQUEST, payload: error });
+
+export function fetchExpense(expenses) {
+  return async (dispatch) => {
+    dispatch(getExpense());
+    try {
+      const response = await fetch('https://economia.awesomeapi.com.br/json/all');
+      const exchangeRates = await response.json();
+      const arrayExpense = { ...expenses, exchangeRates };
+      return dispatch(requestExpense(arrayExpense));
+    } catch (error) {
+      return dispatch(failRequest(error));
+    }
+  };
+}
