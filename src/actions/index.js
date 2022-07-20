@@ -34,6 +34,7 @@ export function fetchCoins() {
 const GET_EXPENSE = 'GET_EXPENSE';
 const REQUEST_EXPENSES = 'REQUEST_EXPENSES';
 const FAIL_REQUEST = 'FAIL_REQUEST';
+const REMOVE_ITEM = 'REMOVE_ITEM';
 
 const getExpense = () => ({ type: GET_EXPENSE });
 
@@ -56,3 +57,8 @@ export function fetchExpense(expenses) {
     }
   };
 }
+
+export const removeItem = (expense) => ({
+  type: REMOVE_ITEM,
+  expense,
+});

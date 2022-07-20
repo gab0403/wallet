@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { newActionUser } from '../actions';
+import logo from '../images/dinheiro-icone.png';
+import '../styles/Login.css';
 
 class Login extends React.Component {
   constructor() {
@@ -40,40 +42,48 @@ class Login extends React.Component {
     const { formDispatch, history } = this.props;
     return (
       <div>
-        <h1>Login</h1>
-        <form>
-          <label htmlFor="email">
-            <input
-              data-testid="email-input"
-              type="email"
-              name="email"
-              value={ email }
-              placeholder="Email"
-              onChange={ (e) => this.handleChange(e) }
-            />
-          </label>
+        <div className="container-logo">
+          <img className="logo" src={ logo } alt="logo" />
+        </div>
+        <div className="container-login">
+          <h1>Login</h1>
+          <form>
+            <label htmlFor="email">
+              <input
+                className="nome_login"
+                data-testid="email-input"
+                type="email"
+                name="email"
+                value={ email }
+                placeholder="Email"
+                onChange={ (e) => this.handleChange(e) }
+              />
+            </label>
 
-          <label htmlFor="password">
-            <input
-              data-testid="password-input"
-              type="password"
-              name="password"
-              value={ password }
-              placeholder="Senha"
-              onChange={ (e) => this.handleChange(e) }
-            />
-          </label>
-        </form>
-        <button
-          type="button"
-          disabled={ isLoginButtonDisabled }
-          onClick={ () => {
-            formDispatch(email);
-            history.push('/carteira');
-          } }
-        >
-          Entrar
-        </button>
+            <label htmlFor="password">
+              <input
+                className="nome_login"
+                data-testid="password-input"
+                type="password"
+                name="password"
+                value={ password }
+                placeholder="Senha"
+                onChange={ (e) => this.handleChange(e) }
+              />
+            </label>
+          </form>
+          <button
+            className="button_login"
+            type="button"
+            disabled={ isLoginButtonDisabled }
+            onClick={ () => {
+              formDispatch(email);
+              history.push('/carteira');
+            } }
+          >
+            Entrar
+          </button>
+        </div>
       </div>
     );
   }

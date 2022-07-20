@@ -7,6 +7,8 @@ const INITIAL_STATE = {
 
 };
 
+const REMOVE_ITEM = 'REMOVE_ITEM';
+
 function walletReducer(state = INITIAL_STATE, action) {
   switch (action.type) {
   case 'GET_COINS':
@@ -23,6 +25,8 @@ function walletReducer(state = INITIAL_STATE, action) {
     return { ...state, error: action.payload, isFetching: false };
   case 'addWallet':
     return { expenses: action.payload };
+  case REMOVE_ITEM:
+    return { ...state, expenses: action.expense };
   default:
     return state;
   }

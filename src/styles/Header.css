@@ -1,0 +1,52 @@
+.header {
+  background: #83c5be;
+  box-shadow: 0 4px 1px rgba(0, 0, 0, 0.25);
+  height: 125px;
+  left: 0;
+  width: 100%;
+}
+
+.container-header {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.logo-header {
+  height: 120px;
+  top: -200px;
+  width: 120px;
+}
+
+.container-email {
+  background-color: white;
+  border-radius: 50px;
+  box-shadow: 0 4px 4px;
+  box-sizing: border-box;
+  color: black;
+  height: 50px;
+  margin-top: 31px;
+  width: 540px;
+}
+
+.email {
+  margin-left: 15px;
+  margin-top: 10px;
+}
+
+.container-pages {
+  display: flex;
+  justify-content: space-around;
+}
+
+.container-despesa {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.despesa {
+  margin-top: 45px;
+}

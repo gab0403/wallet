@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchExpense } from '../actions';
+import '../styles/FormExpenses.css';
 
 class FormExpenses extends React.Component {
   constructor() {
@@ -44,10 +45,11 @@ class FormExpenses extends React.Component {
     const { currencies } = this.props;
     const { currency, value, description, method, tag } = this.state;
     return (
-      <form>
+      <form className="forms">
         <label htmlFor="valor">
           Valor:
           <input
+            className="input-form"
             data-testid="value-input"
             type="text"
             name="value"
@@ -55,19 +57,10 @@ class FormExpenses extends React.Component {
             onChange={ this.handleChange }
           />
         </label>
-        <label htmlFor="description">
-          Descrição da compra:
-          <input
-            data-testid="description-input"
-            type="text"
-            name="description"
-            value={ description }
-            onChange={ this.handleChange }
-          />
-        </label>
         <label htmlFor="currency">
-          Moeda
+          Moeda:
           <select
+            className="select-form"
             name="currency"
             value={ currency }
             id="currency"
@@ -81,6 +74,7 @@ class FormExpenses extends React.Component {
         <label htmlFor="method">
           Pagamento:
           <select
+            className="select-form"
             data-testid="method-input"
             name="method"
             value={ method }
@@ -95,6 +89,7 @@ class FormExpenses extends React.Component {
         <label htmlFor="tag">
           Desespesas:
           <select
+            className="select-form"
             data-testid="tag-input"
             name="tag"
             value={ tag }
@@ -108,8 +103,19 @@ class FormExpenses extends React.Component {
             <option> Saúde </option>
           </select>
         </label>
-        <button type="button" onClick={ this.handleClick }>
-          Adicionar despesa
+        <label htmlFor="description">
+          Descrição da compra:
+          <input
+            className="input-form"
+            data-testid="description-input"
+            type="text"
+            name="description"
+            value={ description }
+            onChange={ this.handleChange }
+          />
+        </label>
+        <button className="button-despesa" type="button" onClick={ this.handleClick }>
+          Adicionar
         </button>
       </form>
     );
