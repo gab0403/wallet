@@ -1,1 +1,18 @@
-O projeto TrybeWallet foi desenvolvido ao final do bloco 15 de front-end. A aplicação foi desenvolvida em React/Redux, este usado como ferramenta de manipulação e criação de estado. Além disso, a aplicação consome a API de Cotações de Moeda, para obter as informações sobre os nomes, cotações e outros dados sobre as moedas.
+# Projeto Wallet
+
+## Foram desenvolvidas as habilidades de:
+* Criar um store Redux em aplicações React
+
+* Criar reducers no Redux em aplicações React
+
+* Criar actions no Redux em aplicações React
+
+* Criar dispatchers no Redux em aplicações React
+
+* Conectar Redux aos componentes React
+
+* Criar actions assíncronas na sua aplicação React que faz uso de Redux.
+
+## Tecnologias utilizadas:
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![REACT](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
